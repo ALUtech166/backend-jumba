@@ -12,7 +12,7 @@ exports.handler = async (event) => {
 
     switch (event.httpMethod) {
       case "POST":
-        const { email, phone, company, position, profile, message, name } =
+        const { email, phone, message, name } =
           JSON.parse(event.body).contact;
 
         const html = `
@@ -47,18 +47,7 @@ exports.handler = async (event) => {
               <p>Telephone:</p>
               <p>${phone}</p>
             </div>
-            <div class="content">
-              <p>Company:</p>
-              <p>${company}</p>
-            </div>
-            <div class="content">
-              <p>Position:</p>
-              <p>${position}</p>
-            </div>
-            <div class="content">
-              <p>Profile:</p>
-              <p>${profile}</p>
-            </div>
+         
             <div class="content">
               <p>Message:</p>
               <p>${message}</p>
